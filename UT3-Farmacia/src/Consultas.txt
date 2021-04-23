@@ -1,0 +1,100 @@
+Preparación Nro. 1
+Suero Id.1 - SueroA
+Fármacos contenidos:
+Fármaco Id.1 - FarmacoA
+Fármaco Id.2 - FarmacoB
+
+Viabilidad: Viable.
+Preparación Nro. 2
+Suero Id.2 - SueroB
+Fármacos contenidos:
+Fármaco Id.2 - FarmacoB
+Fármaco Id.3 - FarmacoC
+Fármaco Id.6 - Fármaco no encontrado.
+
+Viabilidad: El preparado no es viable.
+Preparación Nro. 3
+Suero Id.3 - SueroC
+Fármacos contenidos:
+Fármaco Id.3 - FarmacoC
+Fármaco Id.1 - FarmacoA
+Fármaco Id.2 - FarmacoB
+Fármaco Id.4 - FarmacoD
+
+Viabilidad: Viable.
+Preparación Nro. 4
+Suero Id.4 - SueroD
+Fármacos contenidos:
+Fármaco Id.1 - FarmacoA
+Fármaco Id.3 - FarmacoC
+Fármaco Id.4 - FarmacoD
+
+Viabilidad: El preparado no es viable.
+Preparación Nro. 5
+Suero Id.5 - SueroE
+Fármacos contenidos:
+Fármaco Id.2 - FarmacoB
+Fármaco Id.1 - FarmacoA
+Fármaco Id.5 - FarmacoE
+
+Viabilidad: El preparado no es viable.
+Preparación Nro. 6
+Suero Id.6 - SueroF
+Fármacos contenidos:
+Fármaco Id.3 - FarmacoC
+Fármaco Id.2 - FarmacoB
+
+Viabilidad: Viable.
+Preparación Nro. 1
+Suero Id.1 - SueroA
+Fármacos contenidos:
+Fármaco Id.1 - FarmacoA
+Fármaco Id.2 - FarmacoB
+
+Viabilidad: Viable.
+
+Preparación Nro. 2
+Suero Id.2 - SueroB
+Fármacos contenidos:
+Fármaco Id.2 - FarmacoB
+Fármaco Id.3 - FarmacoC
+Fármaco Id.6 - Fármaco no encontrado.
+
+Viabilidad: El preparado no es viable.
+
+Preparación Nro. 3
+Suero Id.3 - SueroC
+Fármacos contenidos:
+Fármaco Id.3 - FarmacoC
+Fármaco Id.1 - FarmacoA
+Fármaco Id.2 - FarmacoB
+Fármaco Id.4 - FarmacoD
+
+Viabilidad: Viable.
+
+Preparación Nro. 4
+Suero Id.4 - SueroD
+Fármacos contenidos:
+Fármaco Id.1 - FarmacoA
+Fármaco Id.3 - FarmacoC
+Fármaco Id.4 - FarmacoD
+
+Viabilidad: El preparado no es viable.
+
+Preparación Nro. 5
+Suero Id.5 - SueroE
+Fármacos contenidos:
+Fármaco Id.2 - FarmacoB
+Fármaco Id.1 - FarmacoA
+Fármaco Id.5 - FarmacoE
+
+Viabilidad: El preparado no es viable.
+
+Preparación Nro. 6
+Suero Id.6 - SueroF
+Fármacos contenidos:
+Fármaco Id.3 - FarmacoC
+Fármaco Id.2 - FarmacoB
+
+Viabilidad: Viable.
+
