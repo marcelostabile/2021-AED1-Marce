@@ -147,13 +147,12 @@ public class Conjuntos {
 
         ArrayList<int[]> listaProductoCartesiano = new ArrayList<>();    // Esta es lista resultado.
 
-        int[] parOrdenado = new int[2];    // Par ordenado.
-
         for (int elemA : listaConjuntoA) {
             for (int elemB : listaConjuntoB) {
-                parOrdenado[0] = elemA;
-                parOrdenado[1] = elemB;
-                listaProductoCartesiano.add(parOrdenado);
+                int[] parOrdenado = new int[2]; 
+                parOrdenado[0]=elemA;
+                parOrdenado[1]=elemB;
+              listaProductoCartesiano.add(parOrdenado);
             }
         }
         return listaProductoCartesiano;    // Retornamos la lista resultado.
@@ -172,15 +171,15 @@ public class Conjuntos {
     /**
      * Imprimir los valores de un ArrayList por consola.
      */
-    public static void imprimirProductoCartesiano(ArrayList<int[]> listaRecibida) {
+	public static void imprimirProductoCartesiano(ArrayList<int[]> listaRecibida) {
 
         System.out.println("Cant. elementos: " + listaRecibida.size());
 
-        for (int i=0; i<10; i++) {
-            System.out.println("E1: " + elem[0]);
-            System.out.println("E2: " + elem[1]);
+        for (int i=0; i<listaRecibida.size(); i++) {
+            System.out.println("E1: " + listaRecibida.get(i)[0]);
+            System.out.println("E2: " + listaRecibida.get(i)[1]);
 
-            System.out.println("(" + elem[0] + "," + elem[1] + ")");
+            System.out.println("(" + listaRecibida.get(i)[0]+ "," + listaRecibida.get(i)[1] + ")");
         }
     }
 }

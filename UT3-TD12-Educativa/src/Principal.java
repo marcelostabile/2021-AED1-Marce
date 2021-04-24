@@ -10,7 +10,7 @@ public class Principal {
 
         String ruta = "C:\\AED1-Marce21\\RepoMarcelo\\UT3-TD12-Educativa\\src\\archivos\\";
 
-        // Ejercicio 1:
+        
 
 
         System.out.println("Finalizado.");

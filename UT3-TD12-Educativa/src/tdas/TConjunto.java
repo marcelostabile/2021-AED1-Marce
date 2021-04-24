@@ -145,45 +145,42 @@ public class TConjunto<T> extends Lista<T> implements ITConjunto<T> {
         return conjuntoResultado;
     }
 
-    /**
-    * PRODUCTO CARTESIANO
-    * El conjunto PRODUCTO CARTESIANO A x B contiene todos los pares ordenados (a,b) cuyo primer elemento 
-    * pertenece a A y su segundo elemento pertenece a B.
-    * Ejem. A={1,2,3,4} B={a,b} Resultado AxB={(1,a),(1,b),(2,a),(2,b),(3,a),(3,b),(4,a),(4,b)}
-    *
-    * Recibimos dos listas conteniendo los conjuntos (listaConjuntoA y listaConjuntoB).
-    * Creamos una lista (listaProductoCartesiano).
-    * Recorremos la lista del conjunto A, para cada elemento recorremos el conjunto B y por cada valor guardamos un par ordenado (a, b)
-    * que luego guardamos en la lista resultado. 
-    * Cuando terminamos devolvemos la lista resultado.
-     */
-    public TConjunto<T> productoCartesiano(TConjunto<T> otroConjunto) {
+    // /**
+    // * PRODUCTO CARTESIANO
+    // * El conjunto PRODUCTO CARTESIANO A x B contiene todos los pares ordenados (a,b) cuyo primer elemento 
+    // * pertenece a A y su segundo elemento pertenece a B.
+    // * Ejem. A={1,2,3,4} B={a,b} Resultado AxB={(1,a),(1,b),(2,a),(2,b),(3,a),(3,b),(4,a),(4,b)}
+    // *
+    // * Recibimos dos listas conteniendo los conjuntos (listaConjuntoA y listaConjuntoB).
+    // * Creamos una lista (listaProductoCartesiano).
+    // * Recorremos la lista del conjunto A, para cada elemento recorremos el conjunto B y por cada valor guardamos un par ordenado (a, b)
+    // * que luego guardamos en la lista resultado. 
+    // * Cuando terminamos devolvemos la lista resultado.
+    //  * @param <P>
+    //  */
+    // public TConjunto<T> productoCartesiano(TConjunto<T> otroConjunto) {
 
-        TConjunto<T> conjuntoResultado = new TConjunto<>();
+    //     TConjunto<T> conjuntoResultado = new TConjunto<>();
 
-        
+    //     T[] parOrdenado = new T[2];
 
-        int[] parOrdenado = new int[2];
+    //     INodo<T> actual = listaConjunto.getPrimero();
+    //     while (actual != null) {    // Recorro conjunto A.
 
-        return conjuntoResultado;
-    }
+    //         INodo<T> otroActual = otroConjunto.getPrimero();
+    //         while (otroActual != null) {    // Recorro conjunto B.
 
+    //             parOrdenado[0] = actual.clonar();
+    //             parOrdenado[1] = otroActual.getEtiqueta();
 
+    //             INodo<T> nodo = new Nodo<T>(actual.getEtiqueta(), parOrdenado);
+    //             conjuntoResultado.insertarUltimo(nodo);
 
-
-
-
-    
-    //     int[] parOrdenado = new int[2];    // Par ordenado.
-
-    //     for (int elemA : listaConjuntoA) {
-    //         for (int elemB : listaConjuntoB) {
-    //             parOrdenado[0] = elemA;
-    //             parOrdenado[1] = elemB;
-    //             listaProductoCartesiano.add(parOrdenado);
+    //             otroActual = otroActual.getSiguiente();
     //         }
+    //         actual = actual.getSiguiente();
     //     }
-    //     return listaProductoCartesiano;    // Retornamos la lista resultado.
+    //     return conjuntoResultado;
     // }
      
 }
