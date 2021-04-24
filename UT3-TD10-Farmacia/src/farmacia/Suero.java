@@ -1,4 +1,4 @@
-package farmachop;
+package farmacia;
 
 public class Suero implements ISuero {
     

@@ -57,7 +57,7 @@ public class Nodo<T> implements INodo<T> {
      */
     @Override
     public int compareTo(Comparable etiqueta) {
-        return this.etiqueta.compareTo( etiqueta);
+        return this.etiqueta.compareTo(etiqueta);
     }
 
     /**

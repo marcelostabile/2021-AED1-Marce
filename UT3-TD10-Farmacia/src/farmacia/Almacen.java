@@ -1,10 +1,9 @@
-package farmachop;
+package farmacia;
 
 import tdas.*;
 import java.util.*;
 
 import archivos.ManejadorArchivosGenerico;
-import recursos.integerPar;
 
 public class Almacen implements IAlmacen {
 
@@ -12,7 +11,7 @@ public class Almacen implements IAlmacen {
     public ILista<ISuero> listaSueros;    // Lista de sueros.
     public ILista<IPreparado> listaPreparados;    // Lista de preparados.
     public ArrayList<Integer> listaBlanca;    // Lista blanca de fármacos.
-    public ArrayList<integerPar> listaNegra;    // Lista negra de combinaciones suero-fármaco.
+    public ArrayList<IPar<Integer, Integer>> listaNegra;    // Lista negra de combinaciones suero-fármaco.
 
     public Almacen() {
         this.listaFarmacos = new Lista<IFarmaco>();
@@ -28,7 +27,6 @@ public class Almacen implements IAlmacen {
      */
     public void insertarFarmaco(IFarmaco unFarmaco) {
 
-        System.out.println(unFarmaco.getDescFarmaco());
         // Creamos un nodo, insertamos el fármaco si no existe en la lista.
         INodo<IFarmaco> nodoFarmaco = new Nodo<IFarmaco>(unFarmaco.getIdFarmaco(), unFarmaco);
         if ( listaFarmacos.buscar(nodoFarmaco.getEtiqueta()) == null ) { listaFarmacos.insertarUltimo(nodoFarmaco); }
@@ -124,7 +122,7 @@ public class Almacen implements IAlmacen {
      */
     public void ingresarEnListaNegra(int idSuero, int idFarmaco) {
 
-        integerPar parIncompatible = new integerPar(idSuero, idFarmaco);
+        IPar<Integer, Integer> parIncompatible = new Par<>(idSuero, idFarmaco);
         if (listaNegra.contains(parIncompatible) == false) { listaNegra.add(parIncompatible); }    // Insertar en la lista.
     }
 
@@ -145,7 +143,6 @@ public class Almacen implements IAlmacen {
     public void imprimirPreparado(INodo<IPreparado> nodoPrepActual, String ruta) {
     
         // Reporte para imprimir y guardar en pantalla.
-        String reporteStr = "";
         List<String> reporteArch = new ArrayList<>();
 
         // Preparación:
@@ -207,7 +204,8 @@ public class Almacen implements IAlmacen {
 
     public boolean preparadoViable(int idSuero, ArrayList<Integer> listaFarmacos) {
 
-        // Si la lista está vacía, no hay fármacos, no se puede preparar, retorno false.
+        // Si no se ingresó el suero o no hay fármacos, no se puede preparar, retorno false.
+        if (idSuero == 0) { return false; }
         if (listaFarmacos.isEmpty() == true) { return false; }
 
         // Recorro la lista de fármacos de la preparación.
@@ -218,10 +216,14 @@ public class Almacen implements IAlmacen {
 
             // Caso: el fármaco está en la lista blanca, es compatible con todos los sueros.
             // Si no está en la lista blanca, debo revisar la compatibilidad con el suero.
-            integerPar posibleParIncomp = new integerPar(idSuero, idFarmaco);
+            IPar<Integer, Integer> posibleParIncomp = new Par<>(idSuero, idFarmaco);
             if (this.listaBlanca.contains(idFarmaco) == false)
-                for (integerPar ip : this.listaNegra)
-                    if (ip.getValor1() == posibleParIncomp.getValor1() && ip.getValor2() == posibleParIncomp.getValor2()) { return false; }
+                for (IPar<Integer, Integer>  par : this.listaNegra) {
+                    if (par.getValor1() == posibleParIncomp.getValor1() && par.getValor2() == posibleParIncomp.getValor2()) { 
+                        System.out.println(par.getValor1() + "-" + par.getValor2());
+                        return false; 
+                    }
+                }
         }
         return true;
     }

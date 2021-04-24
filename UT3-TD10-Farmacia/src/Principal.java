@@ -1,6 +1,5 @@
 import archivos.*;
-import farmachop.*;
-import tdas.*;
+import farmacia.*;
 
 public class Principal {
 
@@ -8,8 +7,7 @@ public class Principal {
         
         System.out.println("Comenzando procesamiento..." + "\n");
 
-        
-        String ruta = "C:\\AED1-Marce21\\UT3x-FarmaChop\\Farmachop\\src\\";
+        String ruta = "C:\\AED1-Marce21\\RepoMarcelo\\UT3-TD10-Farmacia\\src\\archivos\\";
 
         /**
          * Creamos el almacen.

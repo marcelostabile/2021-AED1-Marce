@@ -173,7 +173,13 @@ public class Lista<T> implements ILista<T> {
         return (this.primero == null);
     }
 
-
+    /**
+     * Vaciamos la lista estableciendo primero como null.
+     */
+    public void vaciar() {
+        this.primero = null;
+    }
+    
     @Override
     public String imprimir() {
         return null;

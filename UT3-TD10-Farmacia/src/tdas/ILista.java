@@ -60,7 +60,11 @@ public interface ILista<T> {
      */
     public boolean esVacia();
 
-
+    /**
+     * Vaciamos la lista estableciendo primero como null.
+     */
+    public void vaciar();
+    
     /**
      * Metodo encargado de imprimir en consola las claves de los nodos
      * contenidos en la lista.

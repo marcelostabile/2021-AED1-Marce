@@ -1,4 +1,4 @@
-package farmachop;
+package farmacia;
 
 import java.util.ArrayList;
 
