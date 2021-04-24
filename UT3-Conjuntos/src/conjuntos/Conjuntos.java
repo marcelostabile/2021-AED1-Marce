@@ -149,7 +149,7 @@ public class Conjuntos {
 
         for (int elemA : listaConjuntoA) {
             for (int elemB : listaConjuntoB) {
-                int[] parOrdenado = new int[2]; 
+                int[] parOrdenado = new int[2];
                 parOrdenado[0]=elemA;
                 parOrdenado[1]=elemB;
               listaProductoCartesiano.add(parOrdenado);
@@ -174,12 +174,12 @@ public class Conjuntos {
 	public static void imprimirProductoCartesiano(ArrayList<int[]> listaRecibida) {
 
         System.out.println("Cant. elementos: " + listaRecibida.size());
-
+        
         for (int i=0; i<listaRecibida.size(); i++) {
             System.out.println("E1: " + listaRecibida.get(i)[0]);
             System.out.println("E2: " + listaRecibida.get(i)[1]);
-
             System.out.println("(" + listaRecibida.get(i)[0]+ "," + listaRecibida.get(i)[1] + ")");
         }
     }
+
 }
