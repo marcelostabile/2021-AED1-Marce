@@ -1,5 +1,6 @@
-import java.util.ArrayList;
+import java.util.*;
 import conjuntos.*;
+import tdas.*;
 
 public class main {
     
@@ -39,6 +40,31 @@ public class main {
 
         System.out.println("Producto Cartesiano: ");
         Conjuntos.imprimirProductoCartesiano( Conjuntos.productoCartesiano(conjuntoA, conjuntoB) );
+
+        // Conjunto con TDA Lista.
+        TConjunto<Integer> conjunto1 = new TConjunto<>();
+        TConjunto<Integer> conjunto2 = new TConjunto<>();
+
+        conjunto1.insertarElementos(conjuntoA);
+        conjunto2.insertarElementos(conjuntoB);
+
+        System.out.println("Conjunto1 - elementos: " + conjunto1.cantElementos());
+        System.out.println("Conjunto2 - elementos: " + conjunto2.cantElementos() + "\n");
+
+        System.out.println("Unión: ");
+        conjunto1.imprimirTConjunto(conjunto1.union(conjunto2));
+
+        System.out.println("Intersección: ");
+        conjunto1.imprimirTConjunto(conjunto1.interseccion(conjunto2));
+
+        System.out.println("Diferencia: ");
+        conjunto1.imprimirTConjunto(conjunto1.diferencia(conjunto2));
+
+        System.out.println("Diferencia Simétrica: ");
+        conjunto1.imprimirTConjunto(conjunto1.diferenciaSimetrica(conjunto2));
+
+        System.out.println("Complemento: ");
+        conjunto1.imprimirTConjunto(conjunto1.complemento(conjunto2));
 
         System.out.println("Finalizado.");
     }
