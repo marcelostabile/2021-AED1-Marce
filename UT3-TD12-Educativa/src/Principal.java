@@ -1,6 +1,7 @@
 import tdas.*;
 import archivos.*;
-import conjuntos.*;
+import institucion.Examen;
+import metodos.*;
 
 public class Principal {
 
@@ -8,11 +9,10 @@ public class Principal {
 
         System.out.println("Comenzado...");
 
-        String ruta = "C:\\AED1-Marce21\\RepoMarcelo\\UT3-TD12-Educativa\\src\\archivos\\";
+        Examen exa = new Examen();
 
+        exa.main();
         
-
-
         System.out.println("Finalizado.");
     }
 }

@@ -2,69 +2,74 @@ package tdas;
 
 public interface INodo<T> {
 
-     /**
-     * devuelve el dato del nodo
-     * @return 
-     */
+    /**
+     * Devuelve el dato del nodo.
+     * Este método es de Orden constante : O(1)
+     * @return dato
+    */
     public T getDato();
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
+     * Establece el dato en el nodo.
+     * Este método es de Orden constante : O(1)
+     * @param 
+    */
     public void setDato(T dato);
 
     /**
-     * Retorna la etiqueta del nodo
-     *
-     * @return etiqueta del nodo
-     */
+     * Devuelve la etiqueta del nodo.
+     * Este método es de Orden constante : O(1)
+     * @return etiqueta
+    */
     public Comparable getEtiqueta();
 
     /**
-     * devuelve el siguiente del nodo
-     * @return 
-     */
+     * Devuelve el siguiente del nodo.
+     * Este método es de Orden constante : O(1)
+     * @return nodo siguiente.
+    */
     public INodo<T> getSiguiente();
     
     /**
-     * "engancha" otro nodo a continuacion
-     * 
-     */
+     * Establece el siguiente del nodo.
+     * Este método es de Orden constante : O(1)
+     * @param nodo siguiente
+    */
     public void setSiguiente(INodo<T> nodo);
 
     /**
-     *
-     * @param etiqueta
-     * @return devueve -1 si this tiene una etiqueta menor, 0 si son iguales, 1
-     * si es mayor
-     */
+     * Compara la etiqueta del nodo con otra.
+     * Este método es de Orden constante : O(1)
+     * @param 
+     * @return entero 
+    */
     public int compareTo(Comparable etiqueta);
 
     /**
-     * Imprime los datos del nodo
-     */
+     * Imprimir el dato del nodo.
+     * Este método es de Orden constante : O(1)
+    */
     public void imprimir();
 
     /**
-     * Imprime la etiqueta del nodo
-     */
+     * Imprimir la etiqueta del nodo.
+     * Este método es de Orden constante : O(1)
+    */
     public void imprimirEtiqueta();
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
+     * Clona el nodo y devuelve la copia.
+     * Este método es de Orden constante : O(1)
+     * @return nodo clonado
+    */
     public Nodo<T> clonar();
 
-     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
+    /**
+     * Verifica si los datos son iguales y devuelve un boolean.
+     * Este método es de Orden constante : O(1)
+     * @param 
+     * @return boolean
+    */
     public boolean equals(Nodo<T> unNodo);
-    
-    //	/**
-    //	 *
-    //	 * @param unNodo
-    //	 * @return devueve -1 si this tiene una clave menor, 0 si son iguales, 1 si es mayor
-    //	 */
-    //	public int compareTo(INodo<E> unNodo);
 
 }

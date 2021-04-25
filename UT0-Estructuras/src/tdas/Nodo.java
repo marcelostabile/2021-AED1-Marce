@@ -7,85 +7,99 @@ public class Nodo<T> implements INodo<T> {
     private INodo<T> siguiente = null;
 
     /**
-     *  El constructor Nodo es de Orden constante : O(1)
-     */
+     * El constructor Nodo es de Orden constante : O(1)
+    */
     public Nodo(Comparable etiqueta, T dato ) {
         this.etiqueta = etiqueta;
         this.dato = dato;
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
+     * Devuelve el dato del nodo.
+     * Este método es de Orden constante : O(1)
+     * @return dato
+    */
     public T getDato() {
         return this.dato;
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
+     * Establece el dato en el nodo.
+     * Este método es de Orden constante : O(1)
+     * @param 
+    */
     public void setDato(T dato) {
         this.dato = dato;
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
-    @Override
+     * Devuelve la etiqueta del nodo.
+     * Este método es de Orden constante : O(1)
+     * @return etiqueta
+    */
     public Comparable getEtiqueta() {
         return this.etiqueta;
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
-    @Override
+     * Devuelve el siguiente del nodo.
+     * Este método es de Orden constante : O(1)
+     * @return nodo siguiente.
+    */
     public INodo<T> getSiguiente() {
         return this.siguiente;
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
-    @Override
+     * Establece el siguiente del nodo.
+     * Este método es de Orden constante : O(1)
+     * @param nodo siguiente
+    */
     public void setSiguiente(INodo<T> nodo) {
         this.siguiente = nodo;
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
-    @Override
+     * Compara la etiqueta del nodo con otra.
+     * Este método es de Orden constante : O(1)
+     * @param 
+     * @return entero 
+    */
     public int compareTo(Comparable etiqueta) {
         return this.etiqueta.compareTo(etiqueta);
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
-    @Override
+     * Imprimir el dato del nodo.
+     * Este método es de Orden constante : O(1)
+    */
     public void imprimir() {
         System.out.println(dato.toString());
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
-    @Override
+     * Imprimir la etiqueta del nodo.
+     * Este método es de Orden constante : O(1)
+    */
     public void imprimirEtiqueta() {
-        System.out.println(this.etiqueta);
+        System.out.println(this.etiqueta.toString());
     }
 
     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
+     * Clona el nodo y devuelve la copia.
+     * Este método es de Orden constante : O(1)
+     * @return nodo clonado
+    */
     public Nodo<T> clonar() {
         return new Nodo<>(this.etiqueta, this.dato);
     }
 
-     /**
-     *  Este metodo es de Orden constante : O(1)
-     */
+    /**
+     * Verifica si los datos son iguales y devuelve un boolean.
+     * Este método es de Orden constante : O(1)
+     * @param 
+     * @return boolean
+    */
     public boolean equals(Nodo<T> unNodo) {
         return this.dato.equals(unNodo.getDato());
     }

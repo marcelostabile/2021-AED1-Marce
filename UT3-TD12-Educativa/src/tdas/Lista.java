@@ -151,7 +151,7 @@ public class Lista<T> implements ILista<T> {
 
         int contador = 0;
 
-        INodo<T> actual = primero;     // Recorremos la lista y acumulamos el total de elementos en el contador. 
+        INodo<T> actual = this.primero;     // Recorremos la lista y acumulamos el total de elementos en el contador. 
         while (actual != null) {    // Recorres hasta el final de la lista en el peor de los casos por lo tanto es de orden O(N) ya que cambia el tiempo si cambia el tamaño de la lista.
             contador++;
             actual = actual.getSiguiente();

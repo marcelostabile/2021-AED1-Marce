@@ -5,10 +5,9 @@ public class Lista<T> implements ILista<T> {
     private INodo<T> primero;
 
     /**
-     * Obtener el primer elemento de la lista.
-     * Este método es de orden constante : O(1)
+     *  Este metodo getPrimero es de orden constante : O(1)
      */
-    public INodo<T> getPrimero() {
+    public INodo<T> getPrimero() {    // Obtener el primero de la lista.
         if(primero != null){
             return this.primero;
         }
@@ -152,7 +151,7 @@ public class Lista<T> implements ILista<T> {
 
         int contador = 0;
 
-        INodo<T> actual = primero;     // Recorremos la lista y acumulamos el total de elementos en el contador. 
+        INodo<T> actual = this.primero;     // Recorremos la lista y acumulamos el total de elementos en el contador. 
         while (actual != null) {    // Recorres hasta el final de la lista en el peor de los casos por lo tanto es de orden O(N) ya que cambia el tiempo si cambia el tamaño de la lista.
             contador++;
             actual = actual.getSiguiente();
@@ -172,16 +171,85 @@ public class Lista<T> implements ILista<T> {
         return (this.primero == null);
     }
 
-
-    @Override
-    public String imprimir() {
-        return null;
+    /**
+     * Vaciamos la lista estableciendo primero como null.
+     */
+    public void vaciar() {
+        this.primero = null;
     }
 
+    /**
+     * Método encargado de imprimir en consola las etiquetas de los nodos
+     * contenidos en la lista.
+     * @return la cadena obtenida.
+     */
+    public String imprimir() {
+        String cadena = "";
+        if ( !esVacia() ) {
+            INodo<T> nodoActual = this.primero;
+            while (nodoActual != null) {
+                cadena += nodoActual.getEtiqueta().toString();
+                nodoActual = nodoActual.getSiguiente();
+            }
+        }
+        System.out.println(cadena);
+        return cadena;
+    }
 
-    @Override
+    /**
+     * Método encargado de imprimir en consola las etiquetas de los nodos
+     * contenidos en la lista, incluyendo un separador especifico.
+     * @return la cadena obtenida.
+     */
     public String imprimir(String separador) {
-        return null;
+        String cadena = "";
+        if ( !esVacia() ) {
+            INodo<T> nodoActual = this.primero;
+            while (nodoActual != null) {
+                cadena += nodoActual.getEtiqueta().toString();
+                if (nodoActual.getSiguiente() != null) { cadena += separador; }
+                nodoActual = nodoActual.getSiguiente();
+            }
+        }
+        System.out.println(cadena);
+        return cadena;
+    }
+
+    /**
+     * Método encargado de imprimir en consola los datos de los nodos
+     * contenidos en la lista.
+     * @return la cadena obtenida.
+     */
+    public String imprimirDatos() {
+        String cadena = "";
+        if ( !esVacia() ) {
+            INodo<T> nodoActual = this.primero;
+            while (nodoActual != null) {
+                cadena += nodoActual.getDato().toString();
+                nodoActual = nodoActual.getSiguiente();
+            }
+        }
+        System.out.println(cadena);
+        return cadena;
+    }
+
+    /**
+     * Método encargado de imprimir en consola los datos de los nodos
+     * contenidos en la lista, incluyendo un separador especifico.
+     * @return la cadena obtenida.
+     */
+    public String imprimirDatos(String separador) {
+        String cadena = "";
+        if ( !esVacia() ) {
+            INodo<T> nodoActual = this.primero;
+            while (nodoActual != null) {
+                cadena += nodoActual.getDato().toString();
+                if (nodoActual.getSiguiente() != null) { cadena += separador; }
+                nodoActual = nodoActual.getSiguiente();
+            }
+        }
+        System.out.println(cadena);
+        return cadena;
     }
 
 }
