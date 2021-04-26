@@ -2,7 +2,7 @@ package tdas;
 
 import java.util.*;
 
-public class TConjunto<T> extends Lista<T> implements IConjunto<T> {
+public class TConjunto<T> extends Lista<T> implements ITConjunto<T> {
 
     ILista<T> listaConjunto;
 
@@ -12,42 +12,27 @@ public class TConjunto<T> extends Lista<T> implements IConjunto<T> {
     }
 
     /**
-     * Obtener el primer elemento.
+     * Insertar elemento en el conjunto.
      */
-    @Override
-    public INodo<T> getPrimero() {
-        return this.listaConjunto.getPrimero();
-    }
-
-    /**
-     * Obtener la lista Conjunto.
-     */
-    public ILista<T> getLista() {
-        return this.listaConjunto;
-    }
-
-    /**
-     * Insertar un elemento a partir de un nodo.
-     * @param nodo
-     */
-    public void insertarElemento(INodo<T> nodo) {
+    public void insertarElemento(T elemento) {
+        INodo<T> nodo = new Nodo<T>( (Comparable) elemento, elemento);
         this.listaConjunto.insertarUltimo(nodo);
     }
 
     /**
-     * Insertar muchos elementos en el conjunto a partir de un array.
-     * @param unArray
+     * Insertar muchos elementos en el conjunto.
      */
     public void insertarElementos(ArrayList<T> unArrayElementos) {
         for (T elemento : unArrayElementos) {
-            INodo<T> nodo = new Nodo<T>(elemento.toString(), elemento);
-            this.listaConjunto.insertarUltimo(nodo);
+            this.insertarElemento(elemento);
+            System.out.println(this.listaConjunto.cantElementos());
         }
     }
 
     /**
      * Cantidad de elementos en el conjunto.
      */
+    @Override
     public int cantElementos() {
         return this.listaConjunto.cantElementos();
     }
@@ -60,21 +45,21 @@ public class TConjunto<T> extends Lista<T> implements IConjunto<T> {
      * Recorro el conjunto B, verifico si cada elemento no existe previamente, si no existe lo agrego.
      * Retorno el conjunto resultado conteniendo la union de ambos conjuntos.
     */
-    public IConjunto<T> union(IConjunto<T> otroConjunto) {
+    public TConjunto<T> union(TConjunto<T> otroConjunto) {
 
-        IConjunto<T> conjuntoResultado = new TConjunto<T>();
+        TConjunto<T> conjuntoResultado = new TConjunto<T>();
 
         // Conjunto A
         INodo<T> actual = this.listaConjunto.getPrimero();    
         while (actual != null) {
-            conjuntoResultado.insertarElemento(actual.clonar());
+            conjuntoResultado.insertarUltimo(actual.clonar());
             actual = actual.getSiguiente();
         }
         // Conjunto B
-        actual = otroConjunto.getPrimero();
+        actual = otroConjunto.listaConjunto.getPrimero();
         while (actual != null) {
             if (conjuntoResultado.buscar(actual.getEtiqueta()) == null) {
-                conjuntoResultado.insertarElemento(actual.clonar());
+                conjuntoResultado.insertarPrimero(actual.clonar());
             }
             actual = actual.getSiguiente();
         }
@@ -89,26 +74,26 @@ public class TConjunto<T> extends Lista<T> implements IConjunto<T> {
      * Esto es más eficiente que recorrer el conjunto más largo como referencia.
      * Para cada coincidencia, copiamos el elemento al conjunto resultado, que finalmente retornamos.
      */
-    public IConjunto<T> interseccion(IConjunto<T> otroConjunto) {
+    public TConjunto<T> interseccion(TConjunto<T> otroConjunto) {
         
-        IConjunto<T> conjuntoResultado = new TConjunto<T>();
+        TConjunto<T> conjuntoResultado = new TConjunto<T>();
 
         ILista<T> listaPrincipal = new Lista<T>();
         ILista<T> listaReferencia = new Lista<T>();
 
         // Verificar el conjunto más pequeño.
-        if (this.listaConjunto.cantElementos() <= otroConjunto.cantElementos()) {
+        if (this.listaConjunto.cantElementos() <= otroConjunto.listaConjunto.cantElementos()) {
             listaPrincipal = listaConjunto;
-            listaReferencia = otroConjunto.getLista();
+            listaReferencia = otroConjunto.listaConjunto;
         } else {
-            listaPrincipal = otroConjunto.getLista();
+            listaPrincipal = otroConjunto.listaConjunto;
             listaReferencia = listaConjunto;
         }
 
         INodo<T> actual = listaPrincipal.getPrimero();
         while (actual != null) {
             if (listaReferencia.buscar(actual.getEtiqueta()) != null) {
-                conjuntoResultado.insertarElemento(actual.clonar());
+                conjuntoResultado.insertarPrimero(actual.clonar());
             }
             actual = actual.getSiguiente();
         }
@@ -122,14 +107,14 @@ public class TConjunto<T> extends Lista<T> implements IConjunto<T> {
      * Recorro el conjunto A y para cada elemento verifico si existe en el conjunto B.
      * Si no existe agrego el elemento al conjunto resultado, al final devuelvo estos resultados.
      */
-    public IConjunto<T> diferencia(IConjunto<T> otroConjunto) {
+    public TConjunto<T> diferencia(TConjunto<T> otroConjunto) {
 
-        IConjunto<T> conjuntoResultado = new TConjunto<T>();
+        TConjunto<T> conjuntoResultado = new TConjunto<T>();
 
         INodo<T> actual = this.listaConjunto.getPrimero();
         while (actual != null) {
-            if (otroConjunto.buscar(actual.getEtiqueta()) == null) { 
-                conjuntoResultado.insertarElemento(actual.clonar());
+            if (otroConjunto.listaConjunto.buscar(actual.getEtiqueta()) == null) { 
+                conjuntoResultado.insertarPrimero(actual.clonar());
             }
             actual = actual.getSiguiente();
         }
@@ -144,24 +129,24 @@ public class TConjunto<T> extends Lista<T> implements IConjunto<T> {
      * Luego recorreo el segundo conjunto, para cada elemento verifico si existe en el conjunto A 
      * y en el conjunto resultado. Si no existe en ambos lo agrego al conjunto resultado.
     */
-    public IConjunto<T> diferenciaSimetrica(IConjunto<T> otroConjunto) {
+    public TConjunto<T> diferenciaSimetrica(TConjunto<T> otroConjunto) {
 
-        IConjunto<T> conjuntoResultado = new TConjunto<T>();
+        TConjunto<T> conjuntoResultado = new TConjunto<T>();
 
         // Conjunto A
         INodo<T> actual = this.listaConjunto.getPrimero();
         while (actual != null) {
-            if (otroConjunto.buscar(actual.getEtiqueta()) == null) {
-                conjuntoResultado.insertarElemento(actual.clonar());
+            if (otroConjunto.listaConjunto.buscar(actual.getEtiqueta()) == null) {
+                conjuntoResultado.insertarPrimero(actual.clonar());
             }
             actual = actual.getSiguiente();
         }
 
         // Conjunto B
-        actual = otroConjunto.getPrimero();
+        actual = otroConjunto.listaConjunto.getPrimero();
         while (actual != null) {
             if ( (this.listaConjunto.buscar(actual.getEtiqueta()) == null) && (conjuntoResultado.buscar(actual.getEtiqueta()) == null) ) {
-                conjuntoResultado.insertarElemento(actual.clonar());
+                conjuntoResultado.insertarPrimero(actual.clonar());
             }
             actual = actual.getSiguiente();
         }
@@ -175,14 +160,14 @@ public class TConjunto<T> extends Lista<T> implements IConjunto<T> {
      * Para cada elemento del conjunto B, verifico si exite en el conjunto A.
      * Los números que no existen los agrego al conjunto resultado, que luego devuelvo.
      */
-    public IConjunto<T> complemento(IConjunto<T> otroConjunto) {
+    public TConjunto<T> complemento(TConjunto<T> otroConjunto) {
 
-        IConjunto<T> conjuntoResultado = new TConjunto<>();
+        TConjunto<T> conjuntoResultado = new TConjunto<>();
 
-        INodo<T> actual = otroConjunto.getPrimero();
+        INodo<T> actual = otroConjunto.listaConjunto.getPrimero();
         while (actual != null) {
             if (this.listaConjunto.buscar(actual.getEtiqueta()) == null) {
-                conjuntoResultado.insertarElemento(actual.clonar());
+                conjuntoResultado.insertarPrimero(actual.clonar());
             }
             actual = actual.getSiguiente();
         }
@@ -192,7 +177,7 @@ public class TConjunto<T> extends Lista<T> implements IConjunto<T> {
     /**
      * Imprimir TConjunto.
      */
-    public void imprimirConjunto(IConjunto<T> conjunto) {
+    public void imprimirTConjunto(TConjunto<T> conjunto) {
 
         INodo<T> actual = conjunto.getPrimero();
         String cadena = "";

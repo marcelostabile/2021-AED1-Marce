@@ -4,6 +4,15 @@ import java.util.*;
 
 public interface IConjunto<T> extends ILista<T> {
 
+
+    public void insertarUltimo(INodo<T> nodo);
+
+
+
+
+
+
+
     /**
      * Obtener el primer elemento.
      */
