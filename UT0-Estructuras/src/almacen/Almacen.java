@@ -43,35 +43,35 @@ public class Almacen implements IAlmacen {
         }
     }
 
-    /**
-     * Búsqueda de productos por nombre parcial.
-     * @return productos que coinciden con la búsqueda.
-     */
-    public String buscarPorNombreParcial(String nombreBuscado) {
+    // /**
+    //  * Búsqueda de productos por nombre parcial.
+    //  * @return productos que coinciden con la búsqueda.
+    //  */
+    // public String buscarPorNombreParcial(String nombreBuscado) {
         
-        String resultadosBusqueda = "";
+    //     String resultadosBusqueda = "";
 
-        /* 
-        * Método contains es sensible a mayúsculas y minúsculas.
-        * Para eliminar esto convierto el nombre buscado y los nombre de productos a mayúsculas para la comparación.
-        */
-        String nombreBuscadoMAY = nombreBuscado.toUpperCase();
-        String nombreProductoMAY = "";
+    //     /* 
+    //     * Método contains es sensible a mayúsculas y minúsculas.
+    //     * Para eliminar esto convierto el nombre buscado y los nombre de productos a mayúsculas para la comparación.
+    //     */
+    //     String nombreBuscadoMAY = nombreBuscado.toUpperCase();
+    //     String nombreProductoMAY = "";
 
-        INodo<IProducto> actual = this.productos.getPrimero();
-        while (actual != null) {
-            nombreProductoMAY = actual.getDato().getNombre().toUpperCase();
-            if (nombreProductoMAY.contains(nombreBuscadoMAY)) {
-                String cod = actual.getDato().getEtiqueta().toString();
-                String nom = actual.getDato().getNombre();
-                String pre = actual.getDato().getPrecio().toString();
-                String stk = actual.getDato().getStock().toString();
-                resultadosBusqueda += (cod + "," + nom + "," + pre + "," + stk); 
-                if (actual.getSiguiente() != null) { resultadosBusqueda += "\n"; }
-            }
-            actual = actual.getSiguiente();
-        }
-        return resultadosBusqueda;    // Retorna los resultados, si la lista está vacía retorna vacío.
-    } 
+    //     INodo<IProducto> actual = this.listaProductos.getPrimero();
+    //     while (actual != null) {
+    //         nombreProductoMAY = actual.getDato().getNombre().toUpperCase();
+    //         if (nombreProductoMAY.contains(nombreBuscadoMAY)) {
+    //             String cod = actual.getDato().getEtiqueta().toString();
+    //             String nom = actual.getDato().getNombre();
+    //             String pre = actual.getDato().getPrecio().toString();
+    //             String stk = actual.getDato().getStock().toString();
+    //             resultadosBusqueda += (cod + "," + nom + "," + pre + "," + stk); 
+    //             if (actual.getSiguiente() != null) { resultadosBusqueda += "\n"; }
+    //         }
+    //         actual = actual.getSiguiente();
+    //     }
+    //     return resultadosBusqueda;    // Retorna los resultados, si la lista está vacía retorna vacío.
+    // } 
 
 }

@@ -1,0 +1,11 @@
+Ejercicio #1
+
+Parte A
+
+Inicializamos con contadorPalabra = 0.
+
+Se busca en la frase hasta que se encuentre una letra
+(con isLetter o isDigit), ahi suma 1 palabra al contador.
+
+Se busca hasta encontrar un espacio donde la siguiente letra
+luego de encontrar ese espacio se suma como una palabra mas.
