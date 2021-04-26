@@ -17,7 +17,7 @@ public class Principal {
         String[] archPadron = ManejadorArchivosGenerico.leerArchivo(ruta2 + "padron.txt");
         for (String linea1 : archPadron) {
             String[] registro1 = linea1.split(",");
-            IAfiliado afiliado = new Afiliado(Integer.parseInt(registro1[0]), registro1[1].replaceAll(" ", ""), registro1[2].replaceAll(" ", ""));
+            IAfiliado afiliado = new Afiliado(Integer.parseInt(registro1[0]), registro1[1].trim(), registro1[2].replaceAll(" ", ""));
             INodo<IAfiliado> nodoAfiliado = new Nodo<IAfiliado>((Comparable) afiliado.getCedula(), afiliado);
             padron.insertarAfiliado(nodoAfiliado);
         }
@@ -27,7 +27,7 @@ public class Principal {
         String[] archAgendadas = ManejadorArchivosGenerico.leerArchivo(ruta2 + "agendadas.txt");
         for (String linea2 : archAgendadas) {
             String[] registro2 = linea2.split(",");
-            IConsulta consulta = new Consulta(Integer.parseInt(registro2[1]), registro2[2].replaceAll(" ", ""), Integer.parseInt(registro2[3]), Integer.parseInt(registro2[4]));
+            IConsulta consulta = new Consulta(Integer.parseInt(registro2[1]), registro2[2].trim(), Integer.parseInt(registro2[3]), Integer.parseInt(registro2[4]));
             INodo<IConsulta> nodoConsultaAnotada = new Nodo<IConsulta>(consulta.getEspecialidad(), consulta);
             // Busco el afiliado en el padrón y le inserto la consulta.
             IAfiliado elAfiliado = padron.buscarAfiliado(Integer.parseInt(registro2[0])).getDato();
@@ -39,16 +39,17 @@ public class Principal {
         String[] archHistoricas = ManejadorArchivosGenerico.leerArchivo(ruta2 + "historicas.txt");
         for (String linea3 : archHistoricas) {
             String[] registro3 = linea3.split(",");
-            IConsulta consulta = new Consulta(Integer.parseInt(registro3[1]), registro3[2].replaceAll(" ", ""), Integer.parseInt(registro3[3]), Integer.parseInt(registro3[4]));
+            IConsulta consulta = new Consulta(Integer.parseInt(registro3[1]), registro3[2].trim(), Integer.parseInt(registro3[3]), Integer.parseInt(registro3[4]));
             INodo<IConsulta> nodoConsultaHistorica = new Nodo<IConsulta>(consulta.getEspecialidad(), consulta);
             // Busco el afiliado en el padrón y le inserto la consulta.
             IAfiliado elAfiliado = padron.buscarAfiliado(Integer.parseInt(registro3[0])).getDato();
             elAfiliado.insertarConsultaHistorica(nodoConsultaHistorica);
         }
 
+
         // padron actualizar consultas.
         ILista<IAfiliado> listaCobranzas = padron.actualizarConsultas();
-        System.out.println(listaCobranzas.cantElementos());
+        System.out.println("Afiliados a cobrar consulta: " + listaCobranzas.cantElementos());
         INodo<IAfiliado> actual = listaCobranzas.getPrimero();
         while (actual != null) {
             Comparable afiCedula = actual.getDato().getCedula();
@@ -58,6 +59,14 @@ public class Principal {
             actual = actual.getSiguiente();
         }
 
+        // Devolver una lista de afiliados que no concurrieron a cierta especialidad, orden por cédula.
+        String espec = "Cardiologia";
+        ILista<IAfiliado> listaEspecialidad1 = padron.consultasEspecialidad(espec);
+        System.out.println("7 - Consultas " + espec + ": " + listaEspecialidad1.cantElementos());
+
+        espec = "Pediatria";
+        ILista<IAfiliado> listaEspecialidad2 = padron.consultasEspecialidad(espec);
+        System.out.println("7 - Consultas " + espec + ": " + listaEspecialidad2.cantElementos());
     }
 
 }

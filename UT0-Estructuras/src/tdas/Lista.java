@@ -32,6 +32,7 @@ public class Lista<T> implements ILista<T> {
      * @param nodo nuevo
      */
     public void insertarUltimo(INodo<T> nodo) {    // Insertamos un nodo luego del último.
+
         if (this.primero == null) {    // Si no hay elementos en la lista lo insertamos primero.
             this.primero = nodo;
         }

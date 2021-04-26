@@ -46,7 +46,7 @@ public class Afiliado implements IAfiliado {
      * Insertar consultas anotadas.
      * O(N) : Orden Lineal.
      */
-    public void insertarConsultaAnotada(INodo<IConsulta> nodoConsultaAnotada) {
+    public void insertarConsultaAnotada(INodo<IConsulta> nodoConsultaAnotada) { 
         this.consultasAnotadas.insertarUltimo(nodoConsultaAnotada);
     }
 

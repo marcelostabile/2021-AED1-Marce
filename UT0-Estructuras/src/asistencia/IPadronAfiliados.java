@@ -31,5 +31,10 @@ public interface IPadronAfiliados<T> {
      * y la agrego a la lista de cobranza.
      */
     public ILista<IAfiliado> actualizarConsultas();
-    
+
+    /**
+     * Dada cierta especialidad, devolver una lista con los afiliados que no concurrieron.
+     */
+    public ILista<IAfiliado> consultasEspecialidad(String especialidadBuscada);
+
 }

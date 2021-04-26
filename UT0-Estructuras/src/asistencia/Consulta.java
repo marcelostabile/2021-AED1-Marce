@@ -7,7 +7,7 @@ public class Consulta implements IConsulta {
     int fecha;
     String especialidad;
     int cedula;
-    int resultado = 0;
+    int resultado;
     
     public Consulta(int fecha, String especialidad, int cedula, int resultado) {
         this.fecha = fecha;

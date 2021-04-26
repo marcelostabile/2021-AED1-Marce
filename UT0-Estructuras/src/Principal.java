@@ -99,11 +99,13 @@ public class Principal {
     //     System.out.println(miCola.estaVacia());
     //     System.out.println(miCola.getCabeza().getEtiqueta().toString());
 
-    //     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         asistencia.Principal asistenciaMedica = new asistencia.Principal();
         asistenciaMedica.main();
 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    
         System.out.println("Finalizado.");
     }
 
