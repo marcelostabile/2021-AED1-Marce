@@ -1,0 +1,10 @@
+﻿20;Mcleod;2021-04-26 10:00;A;Traumatología
+1;Thornton;2021-04-26 10:00;B;Cardiología
+2;Erickson;2021-04-26 10:00;B;Pediatría
+3;Guerra;2021-04-26 10:00;B;Dermatología
+4;Sweeney;2021-04-26 10:00;B;Dermatología
+5;Bridges;2021-04-26 10:00;B;Dermatología
+6;Bradshaw;2021-04-26 10:00;B;Dermatología
+7;Richardson;2021-04-26 10:00;B;Dermatología
+8;Franco;2021-04-26 10:00;B;Dermatología
+101;Edwards;2021-04-26 10:00;A;Traumatología
