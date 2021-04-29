@@ -6,36 +6,36 @@ public class ListaOrdenada<T> extends Lista<T> {
 
     public void insertar(INodo<T> nodo) {
         
-        // Validamos que el nodo no sea nulo
+        // Validamos que el nodo ingresado no sea nulo.
         if (nodo != null) {
-            
-            //INodo<T> primero = this.getPrimero();
 
             // Lista está vacía, lo insertamos primero.
-            if (this.primero == null) { 
+            if (super.primero == null) { 
                 nodo.setSiguiente(null);
-                this.primero = nodo;
+                super.primero = nodo;
+            
             } else {
                 // Recorremos la lista para insertarlo ordenado.
                 INodo<T> nodoActual;
                 INodo<T> nodoSiguiente;
 
-                nodoActual = this.primero;
+                nodoActual = super.primero;
                 nodoSiguiente = nodoActual.getSiguiente();
 
                 // Caso: primero es mayor, lo agregamos primero y el primero anterior queda siguiente.
-                if (this.primero.getEtiqueta().compareTo(nodo.getEtiqueta()) > 0) { 
-                    nodo.setSiguiente(this.primero);
-                    this.primero = nodo;
-                }
+                if (nodoActual.getEtiqueta().compareTo(nodo.getEtiqueta()) > 0) { 
+                    nodo.setSiguiente(super.primero);
+                    super.primero = nodo;                
+                } else {
 
-                // Recorremos la lista hasta encontrar su lugar.
-                while (nodoSiguiente != null && nodoSiguiente.getEtiqueta().compareTo(nodo.getEtiqueta()) < 0){
-                    nodoActual = nodoActual.getSiguiente();
-                    nodoSiguiente = nodoActual.getSiguiente();
+                    // Recorremos la lista hasta encontrar su lugar.
+                    while (nodoSiguiente != null && nodoSiguiente.getEtiqueta().compareTo(nodo.getEtiqueta()) < 0){
+                        nodoActual = nodoActual.getSiguiente();
+                        nodoSiguiente = nodoActual.getSiguiente();
+                    }
+                    nodoActual.setSiguiente(nodo);
+                    nodo.setSiguiente(nodoSiguiente);
                 }
-                nodoActual.setSiguiente(nodo);
-                nodo.setSiguiente(nodoSiguiente);
             }
 
         }

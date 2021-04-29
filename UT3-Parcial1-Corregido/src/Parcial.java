@@ -10,9 +10,9 @@ public class Parcial {
 
         // Parte 2
 
-        String ruta = "C:\\AED1-Marce21\\RepoMarcelo\\UT3-Parcial1\\src\\";
-
         // 2. Cargar el archivo de consultas agendadas del día. 
+
+        String ruta = "C:\\AED1-Marce21\\RepoMarcelo\\UT3-Parcial1-Corregido\\src\\";
 
         Lista<IConsulta> consultasDelDia = new Lista<>();
 
@@ -27,6 +27,8 @@ public class Parcial {
 
         // 3. Instanciar y cargar los médicos de la Policlínica A y Policlínica B
 
+        // Policlínica A.
+
         Conjunto<IMedico> medicosPoliclinicaA = new Conjunto<>();
 
         String[] poliA = ManejadorArchivosGenerico.leerArchivo(ruta + "policlinicaA.txt");
@@ -38,6 +40,8 @@ public class Parcial {
         }
         System.out.println("Registros ingresados: " + medicosPoliclinicaA.cantElementos());
 
+        // Policlínica B.
+
         Conjunto<IMedico> medicosPoliclinicaB = new Conjunto<>();
 
         String[] poliB = ManejadorArchivosGenerico.leerArchivo(ruta + "policlinicaB.txt");
@@ -47,19 +51,47 @@ public class Parcial {
             INodo<IMedico> nodo = new Nodo<>( (Comparable) medico.getIDMedico(), medico);
             medicosPoliclinicaB.insertar(nodo);
         }
-        System.out.println("Registros ingresados: " + medicosPoliclinicaB.cantElementos());
+        System.out.println("Registros ingresados: " + medicosPoliclinicaB.cantElementos() + "\n");
 
-        // // 4. Obtener la lista de consultas de una especialidad, ordenada por apellido e imprimirlas en pantalla. 
+        // // 4. Obtener la lista de consultas de una especialidad, ordenada por apellido e imprimirlas en pantalla.
+
         SociedadMedica unaSociedad = new SociedadMedica();
+
         ListaOrdenada<IConsulta> listaConsultasPorEspecialidad = unaSociedad.obtenerConsultasPorEspecialidad("Dermatología", consultasDelDia);
         
-        System.out.println("Total de consultas encontradas: " + listaConsultasPorEspecialidad.cantElementos());
+        INodo<IConsulta> cons = listaConsultasPorEspecialidad.getPrimero();
+        while (cons != null) {
+            String paciente = cons.getDato().getApellidoPaciente();
+            String diaYHora = cons.getDato().getDiaYHora();
+            String policlinica = cons.getDato().getCodPoliclinica();
+            String medico = cons.getDato().getIDMedicoConsulta();
+            String especialidad = cons.getDato().getEspecialidadConsulta();
+            System.out.println("Apellido: " + paciente + ", Fecha: " + diaYHora + ", Policlínica: " + policlinica + ", médico: " + medico + ", Especialidad: " + especialidad);
+            cons = cons.getSiguiente();
+        }
+        System.out.println("Total de consultas encontradas: " + listaConsultasPorEspecialidad.cantElementos() +"\n");
 
-        unaSociedad.obtenerConsultasPorEspecialidad("Traumatología", consultasDelDia);
-        
-        // System.out.println(listaConsultasPorEspecialidad.cantElementos());
         // // 5. Obtener una lista de médicos, ordenado por apellido, que trabajan en una u otra policlínica, pero no en las dos e imprimirlas en pantalla.
+        Conjunto<IMedico> medicosPorApellido = new Conjunto<>();
+        medicosPorApellido = medicosPoliclinicaA.diferenciaSimetrica(medicosPoliclinicaB);
         
+        ListaOrdenada<IMedico> listaOrdenadaMedicos = new ListaOrdenada<>();
+
+        INodo<IMedico> medicoActual = medicosPorApellido.getPrimero();
+
+        while (medicoActual != null) {
+            INodo<IMedico> drTemp = new Nodo<IMedico>( (Comparable) medicoActual.getDato().getApellido(), medicoActual.getDato());
+            listaOrdenadaMedicos.insertar(drTemp);
+            medicoActual = medicoActual.getSiguiente();
+        }
+
+        System.out.println("Imprimiendo lista de médicos:");
+        INodo<IMedico> actual = listaOrdenadaMedicos.getPrimero();
+        while (actual != null) {
+            System.out.println(actual.getDato().getApellido() + ", " + actual.getDato().getNombre() + ", " + actual.getDato().getIDMedico());
+            actual = actual.getSiguiente();
+        }
+
     }
 
 }

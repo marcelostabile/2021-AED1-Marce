@@ -55,4 +55,7 @@ public interface INodo<T> {
      * si es mayor
      */
     public int compareTo(Comparable etiqueta);
+
+    public Nodo<T> clonar();
+
 }
