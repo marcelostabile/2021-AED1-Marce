@@ -3,6 +3,8 @@
  */ 
 package TDAS;
 
+import java.util.ArrayList;
+
 public interface IArbolBB<T> {
 
     /**
@@ -75,12 +77,51 @@ public interface IArbolBB<T> {
     public int completos();
 
     /**
+     * Obtener el nodo con la menor clave del árbol.
+     * @return nodo de menor clave.
+     */
+    public TElementoAB<T> claveMenor();
+
+    /**
+     * Obtener el nodo con la mayor clave del árbol.
+     * @return nodo de mayor clave.
+     */
+    public TElementoAB<T> claveMayor();
+
+    /**
+     * Método para determinar si el árbol de binario de búsqueda.
+     * @return boolean, true si el árbol de de búsqueda.
+     */
+    public boolean esABB();
+
+    /**
      * Método para determinar la cantidad de nodos en determinado nivel.
      * @param unaEtiqueta
      * @return cantidad de nodos en el nivel.
      */
     public Integer nivelNodoABB(Comparable unaEtiqueta);
 
-    public Integer nivelNodoABB2(Comparable unaEtiqueta);
+    /**
+     * Lista las hojas indicando su nivel.
+     * 
+     * Listar todas las hojas, cada una con su nivel. Usar dos parámetros en el método de
+     * nodo: un entero para ir llevando el nivel y una lista Strings “nodo.etiqueta – nivel”
+     * para ir agregando las etiquetas de las hojas y su nivel)
+     * listaDeHojas(): devuelve una lista de String “etiqueta – nivel”
+     */
+    public ArrayList<String> listaDeHojas();
+
+    /**
+     * Devuelve la cantidad de nodos de un cierto nivel de un árbol binario.
+     */
+    public int enNivel(int nivel);
+
+    // /**
+    //  * Obtener la clave inmediata anterior a una clave dada (pasada por parámetro).
+    //  * anterior(Comparable etiqueta)
+    //  * devuelve un nodo del ABB, nulo si la etiqueta del parámetro es la menor del árbo
+    //  */
+    // public TElementoAB<T> anterior(Comparable etiqueta);
+    
 }
 

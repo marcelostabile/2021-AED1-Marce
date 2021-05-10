@@ -3,6 +3,8 @@
  */ 
 package TDAS;
 
+import java.util.ArrayList;
+
 public interface IElementoAB<T> {
 
     /**
@@ -97,9 +99,6 @@ public interface IElementoAB<T> {
      */
     public TElementoAB eliminar(Comparable unaEtiqueta);
 
-    public int nivelNodo(Comparable unaEtiqueta);
-    public int nivelNodo2(Comparable unaEtiqueta);
-    
     /**
      * Método para determinar la altura del árbol.
      * 
@@ -112,7 +111,6 @@ public interface IElementoAB<T> {
      * 
      * Recorro recursivamente el árbol, por cada nodo sumo uno, retorno el
      * resultado.
-     * 
      * @return entero
      */
     public int calcularTamano();
@@ -142,5 +140,47 @@ public interface IElementoAB<T> {
      * @return entero
      */
     public int calcularInternosCompletos();
+
+    /**
+     * Obtener el nodo con la menor clave del árbol.
+     * @return nodo de menor clave.
+     */
+    public TElementoAB<T> obtenerClaveMenor();
+
+    /**
+     * Obtener el nodo con la mayor clave del árbol.
+    * @return nodo de mayor clave.
+    */
+    public TElementoAB<T> obtenerClaveMayor();
+
+    /**
+     * Método para determinar si el árbol de binario de búsqueda.
+     * @return boolean, true si el árbol de de búsqueda.
+     */
+    public boolean esABB();
+
+    /**
+     * Determinar el nivel de un nodo a partir de una etiqueta.
+     * 
+     * @return nivel del nodo.
+     */
+    public int nivelNodo(Comparable unaEtiqueta);
+
+    /**
+     * Lista las hojas indicando su nivel.
+     * 
+     * Listar todas las hojas, cada una con su nivel. Usar dos parámetros en el método de
+     * nodo: un entero para ir llevando el nivel y una lista Strings “nodo.etiqueta – nivel”
+     * para ir agregando las etiquetas de las hojas y su nivel)
+     * listaDeHojas(): devuelve una lista de String “etiqueta – nivel”
+     */
+    public ArrayList<String> listaDeHojas(int nivel, ArrayList<String> listadoHojas);
+
+    /**
+     * Devuelve la cantidad de nodos de un cierto nivel de un árbol binario.
+     * @param nivel
+     * @return cantidad de nodos.
+     */
+    public int nodosEnNivel(int nivelActual, int nivelObjetivo);
 
 }

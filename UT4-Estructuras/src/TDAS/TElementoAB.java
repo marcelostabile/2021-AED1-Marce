@@ -3,7 +3,7 @@
  */ 
 package TDAS;
 
-import javax.swing.SpringLayout;
+import java.util.ArrayList;
 
 public class TElementoAB<T> implements IElementoAB<T> {
 
@@ -227,7 +227,6 @@ public class TElementoAB<T> implements IElementoAB<T> {
      * 
      * Recorro recursivamente el árbol, por cada nodo sumo uno, retorno el
      * resultado.
-     * 
      * @return entero
      */
     public int calcularTamano() {
@@ -411,27 +410,17 @@ public class TElementoAB<T> implements IElementoAB<T> {
 
     /**
      * Determinar el nivel de un nodo a partir de una etiqueta.
-     * @return nivel del nodo.
-     */
-    public int nivelNodo(Comparable unaEtiqueta) {
-        return 0;
-    }
-
-    /**
-     * Determinar el nivel de un nodo a partir de una etiqueta.
      * 
      * @return nivel del nodo.
      */
-    public int nivelNodo2(Comparable unaEtiqueta) {
-
-        System.out.println(unaEtiqueta);
+    public int nivelNodo(Comparable unaEtiqueta) {
 
         int resultado = -1;   // Default, no encontrado.
 
-        // Verificamos si el elemento actual coincide con la busqueda, retornamos cero.
+        // Verificamos si el elemento actual coincide con la busqueda, retornamos uno.
         // En caso contrario, si no tiene hijos, no se encontró, retornamos -1.
         if (unaEtiqueta.compareTo(this.etiqueta) == 0) {   // Encontrado.
-            return 0;
+            return 1;
         } else {
             if ((hijoIzq == null) && (hijoDer == null)) {   // No Encontrado.
                 return -1;
@@ -440,11 +429,11 @@ public class TElementoAB<T> implements IElementoAB<T> {
 
         // Si tiene hijos, continuamos la búsqueda recursivamente.
         if ((unaEtiqueta.compareTo(this.etiqueta) < 0) && (hijoIzq != null)) {
-            resultado = hijoIzq.nivelNodo2(unaEtiqueta);
+            resultado = hijoIzq.nivelNodo(unaEtiqueta);
         }
 
         if ((unaEtiqueta.compareTo(this.etiqueta) > 0) && (hijoDer != null)) {
-            resultado = hijoDer.nivelNodo2(unaEtiqueta);
+            resultado = hijoDer.nivelNodo(unaEtiqueta);
         }
 
         // Evaluamos el resultado de la búsqueda, si lo encontramos retornamos el nivel + 1, sino retornamos -1.
@@ -456,17 +445,56 @@ public class TElementoAB<T> implements IElementoAB<T> {
     }
 
     /**
-     * Determinar el nivel de un nodo a partir de una etiqueta.
-     * @return nivel del nodo.
+     * Lista las hojas indicando su nivel.
+     * 
+     * Listar todas las hojas, cada una con su nivel. Usar dos parámetros en el método de
+     * nodo: un entero para ir llevando el nivel y una lista Strings “nodo.etiqueta – nivel”
+     * para ir agregando las etiquetas de las hojas y su nivel)
+     * listaDeHojas(): devuelve una lista de String “etiqueta – nivel”
      */
-    public int nivelNodoBuscado(Comparable unaEtiqueta) {
+    public ArrayList<String> listaDeHojas(int nivel, ArrayList<String> listadoHojas) {
 
-        TElementoAB<T> nodo = this.buscar(unaEtiqueta);
-
-        if (nodo == null) {
-            return -1;
-        } else {
-            return nodo.calcularAltura();
+        // Si es hoja, agrega la información a la lista.
+        if ( (hijoIzq == null) && (hijoDer == null) ) {
+            listadoHojas.add(this.etiqueta + "-" + nivel);
+            return listadoHojas;
         }
+
+        // Si no es hoja, sigo recorriendo recursivamente.
+        if (hijoIzq != null) {
+            listadoHojas = hijoIzq.listaDeHojas(nivel + 1, listadoHojas);
+        }
+
+        // Si no es hoja, sigo recorriendo recursivamente.
+        if (hijoDer != null) {
+            listadoHojas = hijoDer.listaDeHojas(nivel + 1, listadoHojas);
+        }
+
+        return listadoHojas;
     }
+
+    /**
+     * Devuelve la cantidad de nodos de un cierto nivel de un árbol binario.
+     * @param nivel
+     * @return cantidad de nodos.
+     */
+    public int nodosEnNivel(int nivelActual, int nivelObjetivo) {
+
+        int cantNodos = 0;
+
+        // Si el nivel actual coincide con el nivel objetivo, se agrega el nodo actual al contador.
+        if (nivelActual == nivelObjetivo) {
+            cantNodos += 1;    
+        }
+
+        if (hijoIzq != null) {
+            cantNodos += hijoIzq.nodosEnNivel(nivelActual + 1, nivelObjetivo);
+        }
+        if (hijoDer != null) {
+            cantNodos += hijoDer.nodosEnNivel(nivelActual + 1, nivelObjetivo);
+        }
+
+        return cantNodos;
+    }
+
 }

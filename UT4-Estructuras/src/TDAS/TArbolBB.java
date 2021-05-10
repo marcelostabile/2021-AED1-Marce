@@ -3,6 +3,8 @@
  */ 
 package TDAS;
 
+import java.util.ArrayList;
+
 public class TArbolBB<T> implements IArbolBB<T> {
 
     private TElementoAB<T> raiz;
@@ -163,12 +165,8 @@ public class TArbolBB<T> implements IArbolBB<T> {
      */
     public TElementoAB<T> claveMenor() {
 
-        TElementoAB<T> nodoResultado = null;
-
         if (raiz != null) {
-            nodoResultado = this.raiz;
-            nodoResultado = this.raiz.obtenerClaveMenor();
-            return nodoResultado;
+            return this.raiz.obtenerClaveMenor();
         } else {
             return null;
         }
@@ -180,12 +178,8 @@ public class TArbolBB<T> implements IArbolBB<T> {
      */
     public TElementoAB<T> claveMayor() {
 
-        TElementoAB<T> nodoResultado = null;
-
         if (raiz != null) {
-            nodoResultado = this.raiz;
-            nodoResultado = this.raiz.obtenerClaveMayor();
-            return nodoResultado;
+            return this.raiz.obtenerClaveMayor();
         } else {
             return null;
         }
@@ -217,16 +211,45 @@ public class TArbolBB<T> implements IArbolBB<T> {
     }
 
     /**
-     * Método para determinar la cantidad de nodos en determinado nivel.
-     * @param unaEtiqueta
-     * @return cantidad de nodos en el nivel.
+     * Lista las hojas indicando su nivel.
+     * 
+     * Listar todas las hojas, cada una con su nivel. Usar dos parámetros en el método de
+     * nodo: un entero para ir llevando el nivel y una lista Strings “nodo.etiqueta – nivel”
+     * para ir agregando las etiquetas de las hojas y su nivel)
+     * listaDeHojas(): devuelve una lista de String “etiqueta – nivel”
      */
-    public Integer nivelNodoABB2(Comparable unaEtiqueta) {
-        if (raiz == null) {
-            return 0;
+    public ArrayList<String> listaDeHojas() {
+
+        ArrayList<String> listaHojas = new ArrayList<>();
+
+        if (this.raiz != null) {
+            listaHojas = this.raiz.listaDeHojas(1, listaHojas);
         }
-        return raiz.nivelNodo2(unaEtiqueta);
+        return listaHojas;
     }
 
+    /**
+     * Devuelve la cantidad de nodos de un cierto nivel de un árbol binario.
+     */
+    public int enNivel(int nivel) {
+
+        if (this.raiz != null) {
+            return this.raiz.nodosEnNivel(1, nivel);
+        }
+        return 0;
+    };
+
+    // /**
+    //  * Obtener la clave inmediata anterior a una clave dada (pasada por parámetro).
+    //  * anterior(Comparable etiqueta)
+    //  * devuelve un nodo del ABB, nulo si la etiqueta del parámetro es la menor del árbo
+    //  */
+    // public TElementoAB<T> anterior(Comparable etiqueta) {
+
+    //     if (this.raiz != null) {
+    //         return this.raiz.claveInmediataAnterior(etiqueta);
+    //     }
+    //     return null;
+    // }
 
 }
