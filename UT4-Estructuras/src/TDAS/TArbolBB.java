@@ -211,12 +211,22 @@ public class TArbolBB<T> implements IArbolBB<T> {
      */
     public Integer nivelNodoABB(Comparable unaEtiqueta) {
         if (raiz == null) {
-            return -1;
+            return 0;
         }
         return raiz.nivelNodo(unaEtiqueta);
     }
 
+    /**
+     * Método para determinar la cantidad de nodos en determinado nivel.
+     * @param unaEtiqueta
+     * @return cantidad de nodos en el nivel.
+     */
+    public Integer nivelNodoABB2(Comparable unaEtiqueta) {
+        if (raiz == null) {
+            return 0;
+        }
+        return raiz.nivelNodo2(unaEtiqueta);
+    }
 
 
-    
 }

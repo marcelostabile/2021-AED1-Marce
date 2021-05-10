@@ -81,5 +81,6 @@ public interface IArbolBB<T> {
      */
     public Integer nivelNodoABB(Comparable unaEtiqueta);
 
+    public Integer nivelNodoABB2(Comparable unaEtiqueta);
 }
 

@@ -3,6 +3,8 @@
  */ 
 package TDAS;
 
+import javax.swing.SpringLayout;
+
 public class TElementoAB<T> implements IElementoAB<T> {
 
     private Comparable etiqueta;
@@ -412,13 +414,44 @@ public class TElementoAB<T> implements IElementoAB<T> {
      * @return nivel del nodo.
      */
     public int nivelNodo(Comparable unaEtiqueta) {
+        return 0;
+    }
 
-        TElementoAB<T> nodo = this.buscar(unaEtiqueta);
+    /**
+     * Determinar el nivel de un nodo a partir de una etiqueta.
+     * 
+     * @return nivel del nodo.
+     */
+    public int nivelNodo2(Comparable unaEtiqueta) {
 
-        if (nodo == null) {
-            return -1;
+        System.out.println(unaEtiqueta);
+
+        int resultado = -1;   // Default, no encontrado.
+
+        // Verificamos si el elemento actual coincide con la busqueda, retornamos cero.
+        // En caso contrario, si no tiene hijos, no se encontró, retornamos -1.
+        if (unaEtiqueta.compareTo(this.etiqueta) == 0) {   // Encontrado.
+            return 0;
         } else {
-            return nodo.calcularAltura();
+            if ((hijoIzq == null) && (hijoDer == null)) {   // No Encontrado.
+                return -1;
+            }
+        }
+
+        // Si tiene hijos, continuamos la búsqueda recursivamente.
+        if ((unaEtiqueta.compareTo(this.etiqueta) < 0) && (hijoIzq != null)) {
+            resultado = hijoIzq.nivelNodo2(unaEtiqueta);
+        }
+
+        if ((unaEtiqueta.compareTo(this.etiqueta) > 0) && (hijoDer != null)) {
+            resultado = hijoDer.nivelNodo2(unaEtiqueta);
+        }
+
+        // Evaluamos el resultado de la búsqueda, si lo encontramos retornamos el nivel + 1, sino retornamos -1.
+        if (resultado >= 0) {
+            return resultado += 1;
+        } else {
+            return resultado;
         }
     }
 

@@ -31,12 +31,14 @@ public class Main {
         System.out.println("Internos Completos: " + arbol1.completos());
         System.out.println("PreOrden: " + arbol1.preOrden());
         System.out.println("InOrden: " + arbol1.inOrden());
-        System.out.println("PostOrden: " + arbol1.postOrden());
+        //System.out.println("PostOrden: " + arbol1.postOrden());
         System.out.println("Buscar 192: Etiqueta del nodo obtenido: " + arbol1.buscar(192).getEtiqueta());
-        System.out.println("Nivel Nodo 192: " + arbol1.nivelNodoABB(192));
         System.out.println("Clave Menor: " + arbol1.claveMenor().getEtiqueta());
         System.out.println("Clave Mayor: " + arbol1.claveMayor().getEtiqueta());
         System.out.println("Confirmar Árbol ABB: " + arbol1.esABB());
+        System.out.println("nivelNodo2 5354: " + arbol1.nivelNodoABB2(5354));
+        System.out.println("nivelNodo2 2601: " + arbol1.nivelNodoABB2(2601));
+        System.out.println("nivelNodo2 9999: " + arbol1.nivelNodoABB2(9999));
         System.out.println("\n");
 
         // /**

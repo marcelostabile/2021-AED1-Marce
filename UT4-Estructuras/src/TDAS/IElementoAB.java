@@ -98,7 +98,8 @@ public interface IElementoAB<T> {
     public TElementoAB eliminar(Comparable unaEtiqueta);
 
     public int nivelNodo(Comparable unaEtiqueta);
-
+    public int nivelNodo2(Comparable unaEtiqueta);
+    
     /**
      * Método para determinar la altura del árbol.
      * 
