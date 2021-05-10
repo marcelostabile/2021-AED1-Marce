@@ -31,7 +31,7 @@ public class Main {
         System.out.println("Clave Mayor: " + arbol1.claveMayor());
         System.out.println("Confirmar Árbol ABB: " + arbol1.esABB());
         System.out.println("Buscar 192: nodo obtenido: " + arbol1.buscar(192));
-        System.out.println("nivelNodo 5354: " + arbol1.nivelNodoABB(5354));
+        System.out.println("nivelNodo 5354: " + arbol1.nivelNodoABB(11988));
         System.out.println("nivelNodo 2601: " + arbol1.nivelNodoABB(2601));
         System.out.println("nivelNodo 9999: " + arbol1.nivelNodoABB(9999));
         System.out.println("\n");
