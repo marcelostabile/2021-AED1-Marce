@@ -90,13 +90,48 @@ public class TArbolBB<T> implements IArbolBB<T> {
         }
     }
 
+    /**
+     * Imprime en PreOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> preorden() {
+        Lista<T> listaResultado = null;
+        if (!esVacio()) {
+            listaResultado = new Lista<T>();
+            raiz.preorden(listaResultado);
+        }
+        return listaResultado;
+    }
 
-    
+    /**
+     * Imprime en InOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> inorden() {
+        Lista<T> listaResultado = null;
+        if (!esVacio()) {
+            listaResultado = new Lista<T>();
+            raiz.inorden(listaResultado);
+        }
+        return listaResultado;
+    }
+
+    /**
+     * Imprime en PostOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> postorden() {
+        Lista<T> listaResultado = null;
+        if (!esVacio()) {
+            listaResultado = new Lista<T>();
+            raiz.postorden(listaResultado);
+        }
+        return listaResultado;
+    }
+
     // @Override
     // public void eliminar(Comparable unaEtiqueta) {
     //     // TODO Auto-generated method stub
-
-
 
     /**
      * Método para determinar la altura del árbol.
@@ -238,6 +273,14 @@ public class TArbolBB<T> implements IArbolBB<T> {
         }
         return 0;
     };
+
+    /**
+     * Devuelve true si el árbol es vacío.
+     */
+    public boolean esVacio() {
+        return (raiz == null);
+    }
+
 
     // /**
     //  * Obtener la clave inmediata anterior a una clave dada (pasada por parámetro).

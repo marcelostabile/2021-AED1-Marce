@@ -40,6 +40,24 @@ public interface IArbolBB<T> {
      */
     public String postOrden();
 
+    /**
+     * Imprime en PreOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> preorden();
+
+    /**
+     * Imprime en InOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> inorden();
+
+    /**
+     * Imprime en PostOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> postorden();
+
     // /**
     //  * Elimina un elemento dada una etiqueta.
     //  * @param unaEtiqueta 
@@ -122,6 +140,11 @@ public interface IArbolBB<T> {
     //  * devuelve un nodo del ABB, nulo si la etiqueta del parámetro es la menor del árbo
     //  */
     // public TElementoAB<T> anterior(Comparable etiqueta);
-    
+
+    /**
+     * Devuelve true si el árbol es vacío.
+     */
+    public boolean esVacio();
+
 }
 

@@ -193,13 +193,83 @@ public class TElementoAB<T> implements IElementoAB<T> {
         return cadena;
     }
 
+    /**
+     * Imprime en PreOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> preorden(Lista<T> lista) {
+
+        // Elemento.
+        Nodo<T> unNodo = new Nodo<T>( (Comparable) this.getEtiqueta(), this.getDato());
+        lista.insertarNodoOrdenado(unNodo);
+
+        // Hijo izquierdo.
+        if (hijoIzq != null) {
+            lista = hijoIzq.preorden(lista);
+        }
+
+        // Hijo derecho.
+        if (hijoDer != null) {
+            lista = hijoDer.preorden(lista);
+        }
+
+        // Devolver lista con resultados.
+        return lista;
+    }
+
+    /**
+     * Imprime en InOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> inorden(Lista<T> lista) {
+
+        // Hijo izquierdo.
+        if (hijoIzq != null) {
+            lista = hijoIzq.preorden(lista);
+        }
+
+        // Elemento.
+        Nodo<T> unNodo = new Nodo<T>( (Comparable) this.getEtiqueta(), this.getDato());
+        lista.insertarNodoOrdenado(unNodo);
+
+        // Hijo derecho.
+        if (hijoDer != null) {
+            lista = hijoDer.preorden(lista);
+        }
+
+        // Devolver lista con resultados.
+        return lista;
+    }
+
+    /**
+     * Imprime en PostOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> postorden(Lista<T> lista) {
+
+        // Hijo izquierdo.
+        if (hijoIzq != null) {
+            lista = hijoIzq.preorden(lista);
+        }
+
+        // Hijo derecho.
+        if (hijoDer != null) {
+            lista = hijoDer.preorden(lista);
+        }
+
+        // Elemento.
+        Nodo<T> unNodo = new Nodo<T>( (Comparable) this.getEtiqueta(), this.getDato());
+        lista.insertarNodoOrdenado(unNodo);
+
+        // Devolver lista con resultados.
+        return lista;
+    }
+
     @Override
     public TElementoAB eliminar(Comparable unaEtiqueta) {
         // TODO Auto-generated method stub
         return null;
     }
-
-
 
     /**
      * Método para determinar la altura del árbol.

@@ -91,7 +91,25 @@ public interface IElementoAB<T> {
      * @return String conteniendo el PostOrden
      */
     public String postOrden();
-	
+
+    /**
+     * Imprime en PreOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> preorden(Lista<T> lista);
+
+    /**
+     * Imprime en InOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> inorden(Lista<T> lista);
+
+    /**
+     * Imprime en PostOrden los elementos del árbol, separados por guiones.
+     * @return una lista conteniendo los elementos separados por guiones.
+     */
+    public Lista<T> postorden(Lista<T> lista);
+
 	/**
      * Elimina un elemento dada una etiqueta.
      * @param unaEtiqueta
