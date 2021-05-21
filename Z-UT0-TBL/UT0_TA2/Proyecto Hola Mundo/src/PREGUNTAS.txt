@@ -1,8 +1,0 @@
-
-Pregunta 1
-
-1 linea.
-
-Pregunta 2
-
-se modifica una linea y se agrega una linea.
