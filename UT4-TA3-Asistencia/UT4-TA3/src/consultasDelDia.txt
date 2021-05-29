@@ -1,0 +1,50 @@
+119294,20190905,Medicina general
+134818,20190905,Medicina general
+159644,20190905,Traumatologia
+173584,20190905,Traumatologia
+184985,20190905,Traumatologia
+233614,20190905,Traumatologia
+23507,20190905,Cardiologia
+270484,20190905,Traumatologia
+276906,20190905,Medicina general
+287268,20190905,Cardiologia
+296878,20190905,Traumatologia
+33269,20190905,Medicina general
+340667,20190905,Traumatologia
+367483,20190905,Traumatologia
+415026,20190905,Cardiologia
+438430,20190905,Traumatologia
+445738,20190905,Cardiologia
+456565,20190905,Traumatologia
+464940,20190905,Pediatria
+483110,20190905,Pediatria
+54500,20190905,Medicina general
+549095,20190905,Medicina general
+557148,20190905,Cardiologia
+557596,20190905,Traumatologia
+562630,20190905,Traumatologia
+563656,20190905,Medicina general
+579170,20190905,Cardiologia
+617191,20190905,Medicina general
+652975,20190905,Traumatologia
+65698,20190905,Traumatologia
+663124,20190905,Traumatologia
+674160,20190905,Traumatologia
+704500,20190905,Traumatologia
+763440,20190905,Traumatologia
+775099,20190905,Pediatria
+778235,20190905,Cardiologia
+830741,20190905,Pediatria
+843646,20190905,Traumatologia
+848848,20190905,Pediatria
+882119,20190905,Medicina general
+89544,20190905,Pediatria
+901307,20190905,Medicina general
+926114,20190905,Traumatologia
+92799,20190905,Traumatologia
+954277,20190905,Traumatologia
+957060,20190905,Medicina general
+964185,20190905,Traumatologia
+980900,20190905,Medicina general
+986379,20190905,Medicina general
+986417,20190905,Pediatria
