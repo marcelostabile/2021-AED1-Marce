@@ -13,8 +13,10 @@ public class Main {
      */
     public static void main(String[] args) {
         
+
         // crear un nuevo TArbolBBU de nombre "ucu" 
         TArbolBBU ucu = new TArbolBBU();
+
 
         // cargar los alumnos en el árbol "ucu" desde el archivo de datos "datos.txt"
         // 123,Abadie,Psicología
@@ -26,6 +28,7 @@ public class Main {
             TElementoAB<Alumno> unElemento = new TElementoAB<Alumno>(unAlumno.getCodigo(), unAlumno);
             ucu.insertar(unElemento);
         }
+
 
         // crear una nueva lista de carreras.
         // lo hago en un arbol para evitar revisar por cada registro si existe, elimino los repetidos.
@@ -46,6 +49,7 @@ public class Main {
         Lista<Carrera> carreras = new Lista<>();
         ucu.armarIndicesCarreras(carreras);
 
+
         // escribir el archivo "unaCarrera.txt" con el nombre de la carrera indicada
         String carreraIngresada = "Psicología";
 
@@ -55,7 +59,6 @@ public class Main {
         TArbolBB<Alumno> arbolAlumnosOrdenados = new TArbolBB<>();
         Nodo<Carrera> carrera = carreras.buscar(carreraIngresada.trim());
         if (carrera != null) {   // verifico que la carrera existe.
-                        
             Lista<Alumno> listaAlumnos = carrera.getDato().getIndiceCarrera().inorden();
             Nodo<Alumno> alumno = listaAlumnos.getPrimero();
             while (alumno != null) {
@@ -96,6 +99,21 @@ public class Main {
             nodoCarrera = nodoCarrera.getSiguiente();
         }
         ManejadorArchivosGenerico.escribirArchivo("TodasCarreras.txt", todaslasCarreras.toArray(new String[0]));
+    
+
+        // Listar por Apellido, orden descendente.
+        Lista<Alumno> listaAlumnos = ucu.inorden();
+        Nodo<Alumno> elAlumno = listaAlumnos.getPrimero();
+        
+        TArbolBBU arbolOrdenado = new TArbolBBU();
+        while (elAlumno != null) {
+            TElementoAB<Alumno> alumno = new TElementoAB<>(elAlumno.getDato().getApellido(), elAlumno.getDato());
+            arbolOrdenado.insertar(alumno);
+            elAlumno = elAlumno.getSiguiente();
+        }
+        System.out.println("Listado: \n" + arbolOrdenado.listadoApellidoDescendente());
+  
+
     }
 
 }
