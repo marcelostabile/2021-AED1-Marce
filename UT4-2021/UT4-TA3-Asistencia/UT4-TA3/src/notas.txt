@@ -1,0 +1,35 @@
+INI: 11.30
+
+
+afiliadosArbol - padron afiliados, orden de ingreso, clave principal CI
+
+afiliado (dato del elemento) - tiene lista consultas agendadas y lista historicas
+
+consulta:
+string fecha
+string especialidad
+int medico cedula
+int resultado - 0 no se produjo 1 concurrio 2 no concurrio
+
+funcionalidad 1:
+recorrer los afiliados y cargar las consultas en estado 0 para la fecha
+clave de la consulta: concatenar ci,fecha,especialidad
+
+funcionalidad 2:
+TArbolBB<Afiliado> obtenerConsultasDelDia(String fecha) 
+
+Devuelve un árbol, se imprime en archivo de salida "consultasDelDia.txt"
+
+Imprimir por pantalla la cantidad de consultas.
+
+// realiza la recorrida de los afiliados, 
+las listas de consultas anotados, 
+filtra por fecha (parámetro) y los carga en un TArbolBB para retornar.
+
+funcionalidad 3:
+Integer cantidadConsultasdelDia() 
+
+// obteniendo la cantidad de consultas del día de hoy
+
+incluir los metodos en IArbolPadronAfiliados y clase TArbolPadronAfiliados 
+

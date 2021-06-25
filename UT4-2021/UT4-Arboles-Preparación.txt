@@ -1,0 +1,35 @@
+
+PPT 06/05/2021
+PPT 10/05/2021
+
+UT4-TA1 Papel
+Ejercicio 1,2,3,4,5 - Papel
+
+* UT4-TA2 Claves > Ejercicio 1,2
+
+UT4-TA3 Asistencia Médica
+
+UT4-TA5
+
+UT4-TA7
+Ejercicio 1,2,3,4,5
+
+UT4-TA9
+
+UT4-TA12
+
+UT4-DO1 Árbol
+altura()
+tamaño()
+hojas()
+internos()
+completos()
+enNivel(int nivel)
+
+UT4-DO2
+claveMenor()
+claveMayor()
+listaDeHojas()
+esABB()
+anterior(etiqueta)
+
