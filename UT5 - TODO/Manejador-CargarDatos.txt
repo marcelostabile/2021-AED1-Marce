@@ -1,0 +1,11 @@
+
+String[] archivo = ManejadorArchivosGenerico.leerArchivo("src/archivo.txt");
+for (String linea : archivo) {
+    String[] aux = linea.split(",");
+    try{
+        // Ingreso del registro.
+        
+    }catch(IndexOutOfBoundsException e){
+        System.out.println(e.getMessage());
+    }
+}

@@ -1,0 +1,9 @@
+
+***OPCION 1***
+
+Se incluye al principio el nombre del autor.
+Luego se toma el arbol y se imprime con separador guiones para luego hacer split y obtener registros.
+
+ String[] salida = (elAutor+"-"+librosDelAutor.imprimir("-")).split("-");
+ ManejadorArchivosGenerico.escribirArchivo("autor-libros.txt", salida);
+
