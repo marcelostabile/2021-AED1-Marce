@@ -1,9 +1,68 @@
 
-***OPCION 1***
+***OPCION 01***
 
-Se incluye al principio el nombre del autor.
-Luego se toma el arbol y se imprime con separador guiones para luego hacer split y obtener registros.
+Tenemos un string, nombre del autor.
+Tenemos un árbol, librosDelAutor.
+Obtengo una cadena string separado por guiones con el método imprimir con separador del árbol.
+Luego aplico un split "-" para convertir la cadena string en array string.
 
- String[] salida = (elAutor+"-"+librosDelAutor.imprimir("-")).split("-");
- ManejadorArchivosGenerico.escribirArchivo("autor-libros.txt", salida);
+	String[] salida = (primerRenglon + "-" + arbolElementos.imprimir("-")).split("-");
+	ManejadorArchivosGenerico.escribirArchivo("archivoSalida.txt", salida);
 
+
+***OPCION 02***
+
+	// Obtengo los registros ordenados mediante el árbol.
+	Lista<T> listaOrdenada = arbolOrdenado.inOrden();
+
+	// Generar salida.
+	String[] salida = new String[listaOrdenada.obtenerTamano() + 1];
+	
+	// Encabezado del archivo.
+	String primerRenglon= "TituloDatos";
+	salida[0] = primerRenglon;
+
+	// Registros.
+	Nodo<T> nodo= listaOrdenada.getPrimero();
+	int i = 0;
+        while nodo != null) { 
+		i++;
+		salida[i] = nodo.getCodigo() + "," + nodo.getDato().getApellido();
+		nodo = nodo.getSiguiente();
+	}
+
+	// Escribo salida.
+	ManejadorArchivosGenerico.escribirArchivo("archivoSalida.txt", salida);
+
+
+***OPCION 03***
+
+	List<String> salida = new ArrayList<>();
+
+	// Generar salida.
+	String primerRenglon= "TituloDatos";
+	Lista<T> listaOrdenada = arbolOrdenado.inOrden();
+	Nodo<T> nodo = listaOrdenada.getPrimero();
+        while (nodo != null) {
+            salida.add(nodo.getCodigo() + "," + nodo.getDato().getApellido());
+            nodo = nodo.getSiguiente();
+        }
+        ManejadorArchivosGenerico.escribirArchivo(carreraIngresada + ".txt", salida.toArray(new String[0]));
+
+
+* * * CONVERTIR ARRAYLIST A ARRAY DE STRING * * * 
+
+	// definir arraylist.
+	List<String> salida = new ArrayList<>();
+
+	// agregar registros.
+	salida.add(registro);
+
+	// convertir salida.
+	String[] salidaConvertida = salida.toArray(new String[0]);
+
+	// Ejemplo:
+	// String nombreArchivoSegunDatos = salida[0];
+	// ManejadorArchivosGenerico.escribirArchivo(nombreArchivoSegunDatos + ".txt", salida.toArray(new String[0]));
+
+* * * * * 
