@@ -12,7 +12,7 @@ public class Principal {
 
         // Cargar las claves de los archivos
         int contador = 0;
-        String[] archivo1 = ManejadorArchivosGenerico.leerArchivo("src//claves1.txt");
+        String[] archivo1 = ManejadorArchivosGenerico.leerArchivo("src/claves1.txt");
         for (String linea : archivo1) { 
             if (linea.length() > 0) {
                 TElementoAB<Integer> unElemento = new TElementoAB<>(Integer.parseInt(linea), Integer.parseInt(linea));
