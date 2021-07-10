@@ -1,0 +1,13 @@
+PARTE A
+
+Inicializo la variable cuentaLetras = 0.
+Recorremos la frase.
+Si es un digito, sumo uno a cuentaLetras.
+Retorno el valor de cuentaLetras.
+
+PARTE B
+
+Inicializo la variable cuentaPalabrasLargas = 0.
+Recorremos la frase.
+Si el largo de la palabra es mayor a 3, sumo 1 a cuentaPalabrasLargas.
+Retorno el valor de cuentaLetras.

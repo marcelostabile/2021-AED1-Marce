@@ -1,0 +1,8 @@
+juan,1
+pedro,1
+ana,2
+maria,3
+jose,4
+ariel,2
+ana,3
+juan,2

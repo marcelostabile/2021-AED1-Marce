@@ -1,0 +1,102 @@
+﻿idMedico;apellidoPaciente;diaYHora;codPoliclinica;especialidadConsulta
+20;Mcleod;2021-04-26 10:00;A;Traumatología
+1;Thornton;2021-04-26 10:00;B;Cardiología
+2;Erickson;2021-04-26 10:00;B;Pediatría
+3;Guerra;2021-04-26 10:00;B;Dermatología
+4;Sweeney;2021-04-26 10:00;B;Dermatología
+5;Bridges;2021-04-26 10:00;B;Dermatología
+6;Bradshaw;2021-04-26 10:00;B;Dermatología
+7;Richardson;2021-04-26 10:00;B;Dermatología
+8;Franco;2021-04-26 10:00;B;Dermatología
+101;Edwards;2021-04-26 10:00;A;Traumatología
+102;Rose;2021-04-26 10:00;A;Traumatología
+103;Carpenter;2021-04-26 10:00;A;Traumatología
+104;Mooney;2021-04-26 10:00;A;Dermatología
+105;Mcfarland;2021-04-26 10:00;A;Dermatología
+106;Kaufman;2021-04-26 10:00;A;Dermatología
+107;Porter;2021-04-26 10:00;A;Dermatología
+108;Mooney;2021-04-26 10:00;A;Medicina general
+109;Goodwin;2021-04-26 10:00;A;Medicina general
+10;Leon;2021-04-26 10:00;B;Medicina general
+11;Gardner;2021-04-26 11:00;B;Dermatología
+12;Harper;2021-04-26 11:00;B;Cardiología
+13;Lynch;2021-04-26 11:00;B;Dermatología
+14;Gallegos;2021-04-26 11:00;B;Cardiología
+15;Hull;2021-04-26 11:00;B;Dermatología
+16;Haney;2021-04-26 11:00;B;Traumatología
+17;Ochoa;2021-04-26 11:00;B;Cardiología
+18;Zamora;2021-04-26 11:00;B;Cardiología
+19;Graves;2021-04-26 11:00;B;Cardiología
+110;Mack;2021-04-26 11:00;A;Cardiología
+111;Mcintyre;2021-04-26 11:00;A;Cardiología
+112;Martinez;2021-04-26 11:00;A;Dermatología
+113;Kane;2021-04-26 11:00;A;Dermatología
+114;Hartman;2021-04-26 11:00;A;Dermatología
+115;Perry;2021-04-26 11:00;A;Medicina general
+116;Buck;2021-04-26 11:00;A;Medicina general
+117;Griffith;2021-04-26 11:00;A;Medicina general
+118;Campbell;2021-04-26 11:00;A;Traumatología
+119;Heath;2021-04-26 11:00;A;Cardiología
+120;Alvarez;2021-04-26 12:00;A;Cardiología
+121;Erickson;2021-04-26 12:00;A;Cardiología
+122;Buchanan;2021-04-26 12:00;A;Traumatología
+123;Faulkner;2021-04-26 12:00;A;Cardiología
+124;William;2021-04-26 12:00;A;Medicina general
+65;Eaton;2021-04-26 12:00;B;Medicina general
+66;Livingston;2021-04-26 12:00;B;Medicina general
+67;Kinney;2021-04-26 12:00;B;Medicina general
+68;Bates;2021-04-26 12:00;B;Medicina general
+69;Sampson;2021-04-26 12:00;B;Medicina general
+70;Mack;2021-04-26 12:00;B;Medicina general
+71;Avery;2021-04-26 12:00;B;Medicina general
+72;Aguilar;2021-04-26 12:00;B;Medicina general
+73;Holden;2021-04-26 12:00;B;Medicina general
+74;Levy;2021-04-26 12:00;B;Cardiología
+75;Freeman;2021-04-26 15:00;B;Cardiología
+76;Hardy;2021-04-26 15:00;B;Dermatología
+77;Flowers;2021-04-26 15:00;B;Traumatología
+78;Pugh;2021-04-26 15:00;B;Cardiología
+125;Cannon;2021-04-26 15:00;A;Cardiología
+126;Dejesus;2021-04-26 15:00;A;Traumatología
+127;Roth;2021-04-26 15:00;A;Traumatología
+128;Perry;2021-04-26 15:00;A;Traumatología
+129;Walls;2021-04-26 15:00;A;Traumatología
+130;Sandoval;2021-04-26 15:00;A;Traumatología
+131;Carson;2021-04-26 15:00;A;Traumatología
+132;Tanner;2021-04-26 15:00;A;Dermatología
+133;Page;2021-04-26 16:00;A;Dermatología
+134;Orr;2021-04-26 16:00;A;Cardiología
+135;Beck;2021-04-26 16:00;A;Cardiología
+136;Callahan;2021-04-26 16:00;A;Cardiología
+137;Blackburn;2021-04-26 16:00;A;Cardiología
+138;Mayer;2021-04-26 16:00;A;Pediatría
+139;Butler;2021-04-26 16:00;A;Pediatría
+43;Horton;2021-04-26 16:00;B;Pediatría
+44;Fulton;2021-04-26 16:00;B;Cardiología
+45;Johnson;2021-04-26 16:00;B;Cardiología
+46;Moon;2021-04-26 16:00;B;Cardiología
+47;Ellison;2021-04-26 16:00;B;Cardiología
+48;Stein;2021-04-26 16:00;B;Pediatría
+49;Woods;2021-04-26 16:00;B;Pediatría
+50;Estrada;2021-04-26 16:00;B;Pediatría
+51;Wilson;2021-04-26 16:00;B;Pediatría
+52;Duke;2021-04-26 16:00;B;Pediatría
+53;Kelly;2021-04-26 16:00;B;Pediatría
+54;Rich;2021-04-26 16:00;B;Pediatría
+55;Henson;2021-04-26 16:00;B;Pediatría
+56;Lara;2021-04-26 16:00;B;Pediatría
+57;Morrison;2021-04-26 17:00;B;Pediatría
+157;Hobbs;2021-04-26 17:00;A;Cardiología
+158;Eaton;2021-04-26 17:00;A;Dermatología
+159;Ramirez;2021-04-26 17:00;A;Dermatología
+160;Finch;2021-04-26 17:00;A;Dermatología
+161;Jenkins;2021-04-26 17:00;A;Cardiología
+162;Richardson;2021-04-26 17:00;A;Dermatología
+163;Conrad;2021-04-26 17:00;A;Cardiología
+164;Andrews;2021-04-26 17:00;A;Cardiología
+165;Higgins;2021-04-26 17:00;A;Cardiología
+166;Hyde;2021-04-26 17:00;A;Traumatología
+20;Santos;2021-04-26 17:00;B;Traumatología
+21;Lowery;2021-04-26 17:00;B;Traumatología
+22;Bruce;2021-04-26 17:00;B;Traumatología
+;;;;

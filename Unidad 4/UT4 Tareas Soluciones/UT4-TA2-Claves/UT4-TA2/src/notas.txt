@@ -1,0 +1,31 @@
+EJERCICIO 1
+
+SUB A
+
+a. algoritmo para insertar elementos en el árbol incorporando un contador que 
+   se incrementa en cada invocación y por consola debe mostrar el resultado.
+
+b. cargar el archivo "altas.txt"
+
+c. método que devuelve string con el recorrido del árbol en preorden.
+
+SUB B
+
+a. algoritmo para buscar un elemento del árbol dada una clave.
+
+b. cargar las consultas "consultas.txt"
+
+c. método string con recorrido en postorden
+   método string con recorrido en inorden
+
+EJERCICIO 2
+
+SUB A
+
+a. altura
+b. tamaño
+c. cantidad de hojas
+
+SUB B
+
+a. dada un clave, indicar el nivel.
