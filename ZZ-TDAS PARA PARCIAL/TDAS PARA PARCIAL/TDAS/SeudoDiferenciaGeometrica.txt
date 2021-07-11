@@ -1,0 +1,43 @@
+Parcial 2016
+
+Diferencia Simetrica
+
+Lenguaje natural:
+Dados dos conjuntos
+
+
+Precondiciones:
+
+Postcondiciones:
+
+
+Pseudocodigo:
+
+Firma: TipoConjunto diferenciaSimetrica(TipoConjunto otroConjunto)
+
+INICIO
+
+	TipoConjunto conjuntoDiferencia <-- nuevo Conjunto
+
+	TipoNodo auxiliar <-- thisConjunto.getPrimero()
+	Tipo Nodo auxiliar2 <--otroConjunto.getPrimero()
+
+	MIENTRAS auxiliar<>null HACER
+		SI otroConjunto.buscar(auxiliar Etiqueta)==null ENTONCES
+			TipoNodo temporal <-- nuevo Nodo(auxiliar Etiqueta, auxiliar Dato)
+			conjuntoDiferencia.insertarUltimo(temporal)
+		FINSI
+		auxiliar <-- auxiliar.getSiguiente
+	FINMIENTRAS
+
+	MIENTRAS auxiliar2<>null HACER
+		SI thisConjunto.buscar(auxiliar2 Etiqueta)==null ENTONCES
+			TipoNodo temporal2 <-- nuevo Nodo(auxiliar2 Etiqueta, auxiliar2 Dato)
+			conjuntoDiferencia.insertarUltimo(auxiliar2)
+		FINSI
+		auxiliar2 <-- auxiliar2.getSiguiente
+	FINMIENTRAS
+	
+	DEVOLVER conjuntoDiferencia
+
+FIN

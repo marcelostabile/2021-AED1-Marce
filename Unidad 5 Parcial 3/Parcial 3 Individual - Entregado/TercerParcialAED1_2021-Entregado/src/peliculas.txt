@@ -1,0 +1,9 @@
+1111,Lo que el viento se llevó,drama
+2222,Tora tora tora,acción
+3333,El bueno el malo y el feo,western
+4444,Chucky,terror
+5555,Contagio,drama
+6666,Epidemia,drama
+7777,Apache,western
+8888,Drácula,terror
+9999,Combate,acción

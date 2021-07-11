@@ -1,0 +1,13 @@
+Los actores que trabajaron con Juan son:
+    Pedro en la(s) película(s)
+        Lo que el viento se llevó; Tora tora tora
+    Alfredo en la(s) película(s)
+        Lo que el viento se llevó
+    Maria en la(s) película(s)
+        Tora tora tora
+    Pablo en la(s) película(s)
+        Chucky
+    Omar en la(s) película(s)
+        Chucky
+    
+    

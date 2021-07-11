@@ -1,0 +1,5 @@
+Notas para la importación en Visual Studio Code. 
+
+1. Descargar el zip con el código. 
+2. Des-zipear el código en la carpeta que se vaya a trabajar ("Extract here"). 
+3. En Visual Studio Code: File -> Open Folder. Ahí seleccionar la carpeta del proyecto, llamada "TercerParcialAED1_2021". 
